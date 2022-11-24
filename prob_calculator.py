@@ -12,13 +12,13 @@ class Hat:
                 self.contents.append(i)
 
     def draw(self, no_of_balls_drawn):
-        # if no_of_balls_drawn > len(self.contents):
-        #     return self.contents
+        if no_of_balls_drawn > len(self.contents):
+            return self.contents
         no_of_balls_drawn = min(no_of_balls_drawn, len(self.contents))
         # we set an empty list into which we will populate the number of balls drawn
         balls_drawn = []
-        # since this is a random process, we will loop through the range of the number of balls drawn,
-        # and noting the random number of balls drawn, ie 3, 3, 2 etc.
+        """since this is a random process, we will loop through the range of the number of balls drawn
+        and noting the random number of balls drawn, ie 3, 3, 2 etc."""
         for i in range(no_of_balls_drawn):
             rand_integer = random.randint(0, len(self.contents) - 1)
             balls_drawn.append(self.contents[rand_integer])  # appending the number of balls drawn at index rand_int
